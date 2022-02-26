@@ -36,5 +36,6 @@ public class Consts {
     public static final String CONTACT_US_YOUR_MESSAGE_FIELD = "//textarea[@name = 'field[7]']";
 
     public static final String TEST_STRING_GIT = "My String";
+    public static final String TEST_EXTRA_BRANCH = "Extra branch got tested";
 
 }
