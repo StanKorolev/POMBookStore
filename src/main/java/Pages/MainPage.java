@@ -1,6 +1,7 @@
 package Pages;
 
 import Consts.Consts;
+import Pages.UserPages.LoginPage;
 
 public class MainPage extends BasePage {
 
@@ -17,9 +18,13 @@ public class MainPage extends BasePage {
     private static final String FAQS_OPTION = "//a[text()='FAQs']";
     private static final String CONTACT_US_OPTION = "//a[text()='Contact us']";
     private static final String BLOG_OPTION = "//a[text()='Blog']";
+    private static final String LOGIN_OPTION = "//a[@class = 'site-header__account']";
+    private static final String CART_OPTION = "//a[@class = 'site-header__cart']";
+    private static final String CURRENCY_OPTION = "//span[@class = 'currency-converter-currency-button cbb-desktop-view skiptranslate notranslate']";
 
 
-//    Main Page
+
+    //    Main Page
     public void navigateToMainPage() {
         webDriver.get(Consts.MAIN_URL);
     }
@@ -30,7 +35,7 @@ public class MainPage extends BasePage {
     }
 
 
-//    Header Links
+    //    Header Links
     public BookByLang openBookByLang() {
         clickElementByXpath(BOOK_BY_LANG_OPTION);
         return new BookByLang();
@@ -118,6 +123,25 @@ public class MainPage extends BasePage {
 
     public boolean isDropDownResourcesVisible() {
         return dropDownVisible(Consts.RESOURCES_DROPDOWN_VIDEO);
+    }
+
+//    Top Right Menu
+
+    public LoginPage openLoginPage() {
+        clickElementByXpath(LOGIN_OPTION);
+        return new LoginPage();
+    }
+
+    public CartPage openCartPage() {
+        clickElementByXpath(CART_OPTION);
+        return new CartPage();
+    }
+    public MainPage chooseCurrencyOption(){
+        clickElementByXpath(CURRENCY_OPTION);
+        return new MainPage();
+    }
+    public boolean isCurrencyDropDownVisible(){
+        return elementExists(Consts.CURRENCY_AUD_OPTION);
     }
 
 }
