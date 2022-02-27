@@ -1,8 +1,11 @@
-2022-02-21 12:04:01.545 [main] DEBUG io.github.bonigarcia.wdm.Preferences - Preference firefox=97 (valid until 2022-02-22 12:02:43)
-2022-02-21 12:04:01.556 [main] DEBUG io.github.bonigarcia.wdm.Preferences - Preference firefox97=0.30.0 (valid until 2022-02-22 12:02:43)
-2022-02-21 12:04:01.557 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.30.0 (since Mozilla Firefox 97 is installed in your machine)
-2022-02-21 12:04:01.594 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager - Driver geckodriver 0.30.0 found in cache
-2022-02-21 12:04:01.597 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\Professional\.m2\repository\webdriver\geckodriver\win64\0.30.0\geckodriver.exe
-2022-02-21 12:04:10.643 [main] INFO  MainPageTest - French Books page load test
-2022-02-21 12:04:10.644 [main] INFO  Pages.BasePage - Clicking element with xpath//a[text()='Français']
-2022-02-21 12:04:12.796 [main] INFO  Pages.BasePage - Check element with xpath exists//a[text()='French - Français']
+2022-02-27 12:01:03.835 [main] DEBUG io.github.bonigarcia.wdm.Preferences - Preference chrome=98 (valid until 2022-02-27 13:12:57)
+2022-02-27 12:01:03.845 [main] DEBUG io.github.bonigarcia.wdm.Preferences - Preference chrome98=98.0.4758.102 (valid until 2022-02-27 13:12:57)
+2022-02-27 12:01:03.848 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 98.0.4758.102 (since Google Chrome 98 is installed in your machine)
+2022-02-27 12:01:03.890 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager - Driver chromedriver 98.0.4758.102 found in cache
+2022-02-27 12:01:03.895 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Professional\.m2\repository\webdriver\chromedriver\win32\98.0.4758.102\chromedriver.exe
+2022-02-27 12:01:09.079 [main] INFO  Pages.BasePage - Clicking element with xpath//a[@class = 'site-header__account']
+2022-02-27 12:01:09.900 [main] INFO  MainPageTest - Login in account test
+2022-02-27 12:01:09.900 [main] INFO  Pages.BasePage - Sending text to xpath//input[@name = 'customer[email]']
+2022-02-27 12:01:10.236 [main] INFO  Pages.BasePage - Sending text to xpath//input[@name = 'customer[password]']
+2022-02-27 12:01:10.390 [main] INFO  Pages.BasePage - Clicking element with xpath//input[@value = 'Sign In']
+2022-02-27 12:01:12.007 [main] INFO  Pages.BasePage - Check element with xpath exists//h1[text()='My Account']

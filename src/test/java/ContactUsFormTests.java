@@ -1,14 +1,8 @@
 import Pages.ContactUsPage;
 import Utils.UseCaseBase;
 import Pages.BookByLang;
-import Pages.BooksByLanguagePages.AlbanianBooksPage;
-import Pages.BooksByLanguagePages.DutchBooksPage;
 import Pages.EBookPage;
 import Pages.MainPage;
-import Pages.eBooksByLanguagePages.CzechEbooksPage;
-import Pages.eBooksByLanguagePages.JapaneseEbooksPage;
-import Utils.UseCaseBase;
-import org.apache.commons.lang3.builder.ToStringExclude;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,10 +11,9 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class NegativeTests extends UseCaseBase {
+public class ContactUsFormTests extends UseCaseBase {
     private static MainPage mainPage;
     public static BookByLang bookByLang;
     public static EBookPage eBookPage;
