@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.Select;
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
 
 import java.io.File;
 import java.io.IOException;

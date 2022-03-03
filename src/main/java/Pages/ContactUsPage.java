@@ -1,6 +1,10 @@
 package Pages;
 
 import Consts.Consts;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
 
 public class ContactUsPage extends BasePage {
     public static final String CONTACT_US_HEADER = "//h1[text()='Contact us']";
