@@ -4,6 +4,8 @@ import Pages.BasePage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogType;
 
 
 public class UseCaseBase {
@@ -15,6 +17,7 @@ public class UseCaseBase {
         page = new BasePage();
         webDriver = SharedDriver.getWebDriver(SharedDriver.browserEnum.CHROME);
         page.setWebDriver(webDriver);
+
     }
 
     @AfterAll

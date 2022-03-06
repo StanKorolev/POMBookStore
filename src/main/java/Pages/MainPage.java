@@ -3,6 +3,7 @@ package Pages;
 import Consts.Consts;
 import Pages.UserPages.LoginPage;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
@@ -10,6 +11,7 @@ import org.openqa.selenium.logging.LogType;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
 
 public class MainPage extends BasePage {
 
@@ -158,12 +160,5 @@ public class MainPage extends BasePage {
         File file = captureImageByXpath(MAIN_PAGE_LOGO);
         FileUtils.copyFile(file, new File("MainPageLogo.png"));
     }
-
-    public void mainPageLogs() {
-        List<LogEntry> logs = logCapture();
-        for (LogEntry e : logs) {
-            System.out.println("Message: " + e.getMessage());
-            System.out.println("Level: " + e.getLevel());
-        }
-    }
 }
+

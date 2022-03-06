@@ -1,12 +1,20 @@
 import Pages.*;
+import Utils.SharedDriver;
 import Utils.UseCaseBase;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,6 +42,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("MainPageTest");
         boolean success = mainPage.isLogoVisible();
         assertTrue(success);
+        mainPage.logsVerificationBase();
 
     }
 
@@ -43,6 +52,8 @@ public class MainPageTest extends UseCaseBase {
         BookByLang bookByLang = mainPage.openBookByLang();
         boolean isBookByLangVisible = bookByLang.isBookByLangTitleVisible();
         assertTrue(isBookByLangVisible);
+        mainPage.logsVerificationBase();
+
     }
 
     @Test
@@ -51,6 +62,7 @@ public class MainPageTest extends UseCaseBase {
         EBookPage eBookPage = mainPage.openEbookPage();
         boolean isEbookPageVisible = eBookPage.isEbookPageTitleVisible();
         assertTrue(isEbookPageVisible);
+        mainPage.logsVerificationBase();
     }
 
     @Test
@@ -60,6 +72,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("GiftCardPageTest");
         boolean isGiftVisible = giftCardPage.isPageTitleVisible();
         assertTrue(isGiftVisible);
+        mainPage.logsVerificationBase();
     }
 
     @Test
@@ -69,6 +82,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("SpanishBooksPage");
         boolean isSpanishVisible = spanishBooksPage.isSpanishPageTitleVisible();
         assertTrue(isSpanishVisible);
+        mainPage.logsVerificationBase();
     }
 
     @Test
@@ -78,6 +92,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("FrenchPageTest");
         boolean isFrenchVisible = frenchBooksPage.isSFrenchPageTitleVisible();
         assertTrue(isFrenchVisible);
+        mainPage.logsVerificationBase();
     }
 
     @Test
@@ -87,6 +102,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("ChinesePageTest");
         boolean isChineseVisible = chineseBooksPage.isChinesePageTitleVisible();
         assertTrue(isChineseVisible);
+        mainPage.logsVerificationBase();
     }
 
     @Test
@@ -96,6 +112,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("GalleryPageTest");
         boolean isGalleryVisible = galleryPage.isGalleryPageTitleVisible();
         assertTrue(isGalleryVisible);
+        mainPage.logsVerificationBase();
     }
 
     @Test
@@ -105,6 +122,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("ResourcesPageTest");
         boolean isResourcesVisible = resourcesPage.isResourcesPageTitleVisible();
         assertTrue(isResourcesVisible);
+        mainPage.logsVerificationBase();
     }
 
     @Test
@@ -114,6 +132,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("FaqsPageTest");
         boolean isFagsVisible = faqsPage.isFaqsPageTitleVisible();
         assertTrue(isFagsVisible);
+        mainPage.logsVerificationBase();
     }
 
     @Test
@@ -123,6 +142,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("ContactUsPageTest");
         boolean isContactUsLoaded = contactUsPage.isPageTitleVisible();
         assertTrue(isContactUsLoaded);
+        mainPage.logsVerificationBase();
     }
 
     @Test
@@ -132,16 +152,12 @@ public class MainPageTest extends UseCaseBase {
         mainPage.takeScreenshot("BlogPageTest");
         boolean isBlogLoaded = blogPage.isBlogPageTitleVisible();
         assertTrue(isBlogLoaded);
+        mainPage.logsVerificationBase();
     }
 
     @Test
     public void captureMainPageLogoTest() throws IOException {
         mainPage.mainPageCaptureLogo();
-    }
-
-    @Test
-    public void mainPageLogsTest() {
-        mainPage.mainPageLogs();
     }
 
 }

@@ -1,6 +1,7 @@
 package Pages;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
@@ -15,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.logging.Level;
 
 public class BasePage {
 
@@ -92,9 +94,13 @@ public class BasePage {
             return false;
         }
     }
-    public List logCapture(){
+    public void logsVerificationBase() {
         LogEntries entries = webDriver.manage().logs().get(LogType.BROWSER);
         List<LogEntry> logs = entries.getAll();
-        return  logs;
+        for (LogEntry e : logs) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("Level: " + e.getLevel());
+            Assertions.assertNotEquals(Level.SEVERE, e.getLevel());
+        }
     }
 }
