@@ -2,10 +2,19 @@ package Pages;
 
 import Consts.Consts;
 import Pages.UserPages.LoginPage;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 public class MainPage extends BasePage {
 
     private static final String LOGO_IMG = "//img[@itemprop='logo']";
+    public static final String MAIN_PAGE_LOGO = "//*[@alt = 'KidKiddos Books ']";
     private static final String BOOK_BY_LANG_OPTION = "//a[text()='Books by language']";
     private static final String BOOK_BY_LANG_DROPDOWN_OPTION = "//a[@aria-controls = 'SiteNavLabel-books-by-language']";
     private static final String EBOOK_BY_LANG_DROPDOWN_OPTION = "//a[@aria-controls = 'SiteNavLabel-ebooks-by-language']";
@@ -23,15 +32,14 @@ public class MainPage extends BasePage {
     private static final String CURRENCY_OPTION = "//span[@class = 'currency-converter-currency-button cbb-desktop-view skiptranslate notranslate']";
 
 
-
     //    Main Page
     public void navigateToMainPage() {
         webDriver.get(Consts.MAIN_URL);
     }
 
     public boolean isLogoVisible() {
-        Boolean isVisible = elementExists(LOGO_IMG);
-        return isVisible;
+        Boolean isLogoVisible = elementExists(LOGO_IMG);
+        return isLogoVisible;
     }
 
 
@@ -136,12 +144,26 @@ public class MainPage extends BasePage {
         clickElementByXpath(CART_OPTION);
         return new CartPage();
     }
-    public MainPage chooseCurrencyOption(){
+
+    public MainPage chooseCurrencyOption() {
         clickElementByXpath(CURRENCY_OPTION);
         return new MainPage();
     }
-    public boolean isCurrencyDropDownVisible(){
+
+    public boolean isCurrencyDropDownVisible() {
         return elementExists(Consts.CURRENCY_AUD_OPTION);
     }
 
+    public void mainPageCaptureLogo() throws IOException {
+        File file = captureImageByXpath(MAIN_PAGE_LOGO);
+        FileUtils.copyFile(file, new File("MainPageLogo.png"));
+    }
+
+    public void mainPageLogs() {
+        List<LogEntry> logs = logCapture();
+        for (LogEntry e : logs) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("Level: " + e.getLevel());
+        }
+    }
 }

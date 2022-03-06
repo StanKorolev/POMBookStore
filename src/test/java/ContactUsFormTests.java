@@ -11,6 +11,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ContactUsFormTests extends UseCaseBase {
@@ -34,9 +36,9 @@ public class ContactUsFormTests extends UseCaseBase {
         mainPage.navigateToMainPage();
     }
 
-    //    Contact Us Filed tests
+    //    Contact Us FillUp tests
     @Test
-    public void contactUsFullEmptyTest() {
+    public void contactUsFullEmptyTest() throws IOException {
         logger.info("contactUsFullEmptyTest");
         mainPage.openContactUsPage();
         contactUsPage.contactUsSendMessageButton();
@@ -50,7 +52,7 @@ public class ContactUsFormTests extends UseCaseBase {
     }
 
     @Test
-    public void contactUsNoNameErrorMessageTest() {
+    public void contactUsNoNameErrorMessageTest() throws IOException {
         logger.info("No Nam Error Message Test");
         mainPage.openContactUsPage();
         contactUsPage.contactUsEnterEmail("myemail@gmail.com");
@@ -59,7 +61,6 @@ public class ContactUsFormTests extends UseCaseBase {
         mainPage.takeScreenshot("contactUsNoNameErrorMessageTest");
         boolean isNoNameErrorMessagesVisible = contactUsPage.isNoNameErrorMessagesVisible();
         assertTrue(isNoNameErrorMessagesVisible);
-
     }
 
     @Test
@@ -72,7 +73,6 @@ public class ContactUsFormTests extends UseCaseBase {
         mainPage.takeScreenshot("contactUsNoEmailErrorMessageTest");
         boolean isNoEmailErrorMessageVisible = contactUsPage.isNoEmailErrorMessageVisible();
         assertTrue(isNoEmailErrorMessageVisible);
-
     }
 
     @Test

@@ -2,18 +2,19 @@ package Pages;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.Select;
-import static org.openqa.selenium.support.locators.RelativeLocator.with;
-
 
 import java.io.File;
 import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.time.Duration;
+import java.util.List;
 
 public class BasePage {
 
@@ -21,9 +22,10 @@ public class BasePage {
     protected static WebDriverWait wait;
     public static final Logger logger = LogManager.getLogger(BasePage.class);
 
+
     public void setWebDriver(WebDriver webDriver) {
         this.webDriver = webDriver;
-        wait = new WebDriverWait(webDriver, 5);
+        wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
     }
 
     protected void clickElementByXpath(String xpath) {
@@ -58,7 +60,7 @@ public class BasePage {
         return webDriver.getCurrentUrl();
     }
 
-    public void takeScreenshot(String name) {
+    public void takeScreenshot(String name){
         TakesScreenshot takesScreenshot = (TakesScreenshot) webDriver;
         File file = takesScreenshot.getScreenshotAs(OutputType.FILE);
         try {
@@ -66,6 +68,13 @@ public class BasePage {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public File captureImageByXpath(String xpath){
+        WebElement logo = webDriver.findElement(By.xpath(xpath));
+        File file = logo.getScreenshotAs(OutputType.FILE);
+        return file;
     }
 
     protected void selectElementByXpath(String xpath, String dropListOptions) {
@@ -82,5 +91,10 @@ public class BasePage {
         } catch (Exception err) {
             return false;
         }
+    }
+    public List logCapture(){
+        LogEntries entries = webDriver.manage().logs().get(LogType.BROWSER);
+        List<LogEntry> logs = entries.getAll();
+        return  logs;
     }
 }

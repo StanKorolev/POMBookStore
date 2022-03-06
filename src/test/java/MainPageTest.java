@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
+
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -24,7 +27,7 @@ public class MainPageTest extends UseCaseBase {
         mainPage.navigateToMainPage();
     }
 
-//    Header Tests
+    //    Header Tests
     @Test
     public void mainPageLoadTest() {
         logger.info("Main page load test");
@@ -96,7 +99,7 @@ public class MainPageTest extends UseCaseBase {
     }
 
     @Test
-    public void openResourcesPageTest(){
+    public void openResourcesPageTest() {
         logger.info("Resources page load test");
         ResourcesPage resourcesPage = mainPage.openResourcesPage();
         mainPage.takeScreenshot("ResourcesPageTest");
@@ -130,4 +133,15 @@ public class MainPageTest extends UseCaseBase {
         boolean isBlogLoaded = blogPage.isBlogPageTitleVisible();
         assertTrue(isBlogLoaded);
     }
+
+    @Test
+    public void captureMainPageLogoTest() throws IOException {
+        mainPage.mainPageCaptureLogo();
+    }
+
+    @Test
+    public void mainPageLogsTest() {
+        mainPage.mainPageLogs();
+    }
+
 }
