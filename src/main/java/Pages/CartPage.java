@@ -8,4 +8,6 @@ public class CartPage extends BasePage {
         return elementExists(CART_PAGE_TITLE);
     }
 
+
+
 }

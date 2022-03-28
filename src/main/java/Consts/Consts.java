@@ -46,8 +46,6 @@ public class Consts {
     public static final String LOGIN_INCORRECT_EMAIL_PASSWORD_ERROR_MESSAGE = "//*[text() = 'Incorrect email or password.']";
 
 
-
-
     //Create account xpath
     public static final String CREATE_ACCOUNT_FIRST_NAME_INPUT = "//input[@name = 'customer[first_name]']";
     public static final String CREATE_ACCOUNT_LAST_NAME_INPUT = "//input[@name = 'customer[last_name]']";
@@ -57,8 +55,6 @@ public class Consts {
     public static final String CREATE_ACCOUNT_ERROR_ALL_MESSAGE = "//div[@class = 'errors']";
     public static final String CREATE_ACCOUNT_EMAIL_ALREADY_ASSOCIATED_MESSAGE = "//div[@class = 'errors']//*[text() = 'This email address is already associated with an account. If this account is yours, you can ']";
     public static final String CREATE_ACCOUNT_EMAIL_CANT_BE_BLANK_MESSAGE = "//div[@class = 'errors']//li";
-
-
 
 
 //    My Account page xpath

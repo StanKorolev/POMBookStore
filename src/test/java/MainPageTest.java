@@ -53,7 +53,6 @@ public class MainPageTest extends UseCaseBase {
         boolean isBookByLangVisible = bookByLang.isBookByLangTitleVisible();
         assertTrue(isBookByLangVisible);
         mainPage.logsVerificationBase();
-
     }
 
     @Test

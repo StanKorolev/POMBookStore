@@ -33,7 +33,6 @@ public class BasePage {
     protected void clickElementByXpath(String xpath) {
         logger.info("Clicking element with xpath" + xpath);
         findElementByXpath(xpath).click();
-
     }
 
     protected void sendTextToElementByXpath(String xpath, String text) {
@@ -100,7 +99,7 @@ public class BasePage {
         for (LogEntry e : logs) {
             System.out.println("Message: " + e.getMessage());
             System.out.println("Level: " + e.getLevel());
-            Assertions.assertNotEquals(Level.SEVERE, e.getLevel());
+            Assertions.assertNotEquals(Level.WARNING, e.getLevel());
         }
     }
 }
