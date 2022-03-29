@@ -2,6 +2,7 @@
 import Pages.BookByLang;
 import Pages.BooksByLanguagePages.AlbanianBooksPage;
 import Pages.BooksByLanguagePages.DutchBooksPage;
+import Pages.BooksByLanguagePages.EnglishBooksPage;
 import Pages.EBookPage;
 import Pages.MainPage;
 import Pages.eBooksByLanguagePages.CzechEbooksPage;
@@ -77,6 +78,14 @@ public class DropDownMenuTest extends UseCaseBase {
         AlbanianBooksPage albanianBooksPage = bookByLang.openDropDownAlbanianBooks();
         boolean isAlbanianPageVisible = albanianBooksPage.isAlbanianBooksPageTitleVisible();
         assertTrue(isAlbanianPageVisible);
+    }
+
+    @Test
+    public void openEnglishBooksTest() {
+        logger.info("DropDown English books test");
+        EnglishBooksPage englishBooksPage = bookByLang.openDropDownEnglishBooks();
+        boolean isEnglishPageVisible = englishBooksPage.isEnglishBooksPageTitleVisible();
+        assertTrue(isEnglishPageVisible);
     }
 
     //    Drop EBOOKS Links Tests

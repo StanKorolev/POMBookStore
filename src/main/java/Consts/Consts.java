@@ -57,8 +57,8 @@ public class Consts {
     public static final String CREATE_ACCOUNT_EMAIL_CANT_BE_BLANK_MESSAGE = "//div[@class = 'errors']//li";
 
 
-//    My Account page xpath
-
+    // English books xpath
+    public static final String ENGLISH_BOOK_I_LOVE_TO_EAT_FRUITS = "//img[@alt='I-Love-to-Eat-Fruits-and-Vegetables-kids-bunnies-bedtime-story-Shelley-Admont-English-cover']";
 
 
 }

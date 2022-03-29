@@ -19,14 +19,16 @@ public class BookByLang extends BasePage {
         clickElementByXpath(Consts.BOOK_DROPDOWN_DUTCH);
         return new DutchBooksPage();
     }
+
     public AlbanianBooksPage openDropDownAlbanianBooks() {
         clickElementByXpath(Consts.BOOK_BY_LANG_DROPDOWN_OPTION);
         clickElementByXpath(Consts.BOOK_DROPDOWN_ALBANIAN);
         return new AlbanianBooksPage();
     }
+
     public EnglishBooksPage openDropDownEnglishBooks() {
         clickElementByXpath(Consts.BOOK_BY_LANG_DROPDOWN_OPTION);
-        clickElementByXpath(Consts.BOOK_DROPDOWN_ALBANIAN);
+        clickElementByXpath(Consts.BOOK_DROPDOWN_ENGLISH_ONLY);
         return new EnglishBooksPage();
     }
 
