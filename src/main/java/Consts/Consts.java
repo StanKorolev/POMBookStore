@@ -9,6 +9,7 @@ public class Consts {
     public static final String BOOK_DROPDOWN_ENGLISH_ONLY = "//a[text()='English Only']";
     public static final String BOOK_DROPDOWN_ALBANIAN = "//a[text()='Albanian - Shqip']";
     public static final String BOOK_DROPDOWN_DUTCH = "//a[text()='Dutch - Nederlands']";
+    public static final String BOOK_DROPDOWN_RUSSIAN = "//a[text()='Russian - Русский']";
 
     //EBook options
     public static final String EBOOK_BY_LANG_DROPDOWN_OPTION = "//a[@aria-controls = 'SiteNavLabel-ebooks-by-language']";
@@ -59,6 +60,13 @@ public class Consts {
 
     // English books xpath
     public static final String ENGLISH_BOOK_I_LOVE_TO_EAT_FRUITS = "//img[@alt='I-Love-to-Eat-Fruits-and-Vegetables-kids-bunnies-bedtime-story-Shelley-Admont-English-cover']";
+    public static final String ENGLISH_BOOK_I_LOVE_TO_EAT_FRUITS_CART_IMAGE_PAPER = "//img[@src='//cdn.shopify.com/s/files/1/1788/1145/products/I-Love-to-Eat-Fruits-and-Vegetables-kids-bedtime-story-english-cover_95x95@2x.jpg?v=1492987398']";
+    public static final String ENGLISH_BOOK_AMANDAS_DREAM = "//img[@data-src='//cdn.shopify.com/s/files/1/1788/1145/products/childrens-motivational-bedtime-story-Amandas-Dream-cover_195x195@2x.jpg?v=1625981696']";
+    public static final String ENGLISH_BOOK_AMANDAS_DREAM_CART_IMAGE_PAPER = "//img[@src='//cdn.shopify.com/s/files/1/1788/1145/products/childrens-motivational-bedtime-story-Amandas-Dream-cover_95x95@2x.jpg?v=1625981696']";
+
+    // Russian Books xpath
+    public static final String RUSSIAN_THE_WHEELS_FRIENDSHIP_RACE_ENGLISH = "//img[@data-src='//cdn.shopify.com/s/files/1/1788/1145/products/Wheels-The-Friendship-Race-English-Russian-Bilingual-kids-bedtime-story-cover_195x195@2x.jpg?v=1490980840']";
+    public static final String RUSSIAN_THE_WHEELS_FRIENDSHIP_RACE_ENGLISH_PAPER = "//img[@src='//cdn.shopify.com/s/files/1/1788/1145/products/Wheels-The-Friendship-Race-English-Russian-Bilingual-kids-bedtime-story-cover_95x95@2x.jpg?v=1490980840']";
 
 
 }

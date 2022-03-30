@@ -5,6 +5,7 @@ import Consts.Consts;
 import Pages.BooksByLanguagePages.AlbanianBooksPage;
 import Pages.BooksByLanguagePages.DutchBooksPage;
 import Pages.BooksByLanguagePages.EnglishBooksPage;
+import Pages.BooksByLanguagePages.RussianBooksPage;
 
 public class BookByLang extends BasePage {
     private static final String BOOK_BY_LANG_TITLE = "//h1[text()='Find your language']";
@@ -30,6 +31,12 @@ public class BookByLang extends BasePage {
         clickElementByXpath(Consts.BOOK_BY_LANG_DROPDOWN_OPTION);
         clickElementByXpath(Consts.BOOK_DROPDOWN_ENGLISH_ONLY);
         return new EnglishBooksPage();
+    }
+
+    public RussianBooksPage openDropDownRussianBooksPage() {
+        clickElementByXpath(Consts.BOOK_BY_LANG_DROPDOWN_OPTION);
+        clickElementByXpath(Consts.BOOK_DROPDOWN_RUSSIAN);
+        return new RussianBooksPage();
     }
 
 }
