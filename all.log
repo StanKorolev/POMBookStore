@@ -1,15 +1,14 @@
-2022-03-29 19:26:53.224 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 99.0.4844.51 (resolved driver for Chrome 99)
-2022-03-29 19:26:53.292 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Professional\.cache\selenium\chromedriver\win32\99.0.4844.51\chromedriver.exe
-2022-03-29 19:26:58.925 [main] INFO  MainPageTest - I Love To Eat Fruits And Vegetables Add To Cart Test
-2022-03-29 19:26:58.925 [main] INFO  Pages.BasePage - Clicking element with xpath//a[@aria-controls = 'SiteNavLabel-books-by-language']
-2022-03-29 19:26:59.102 [main] INFO  Pages.BasePage - Clicking element with xpath//a[text()='English Only']
-2022-03-29 19:27:01.101 [main] INFO  Pages.BasePage - Check element with xpath exists//h1[text()='English Only']
-2022-03-29 19:27:01.190 [main] INFO  Pages.BasePage - Clicking element with xpath//img[@alt='I-Love-to-Eat-Fruits-and-Vegetables-kids-bunnies-bedtime-story-Shelley-Admont-English-cover']
-2022-03-29 19:27:02.215 [main] INFO  Pages.BasePage - Check element with xpath exists//div[@class='product-single__meta']//h1[1]
-2022-03-29 19:27:02.266 [main] INFO  Pages.BasePage - Clicking element with xpath//span[text()[normalize-space()='Add to cart']]
-2022-03-29 19:27:03.700 [main] INFO  Pages.BasePage - Check element with xpath exists//h1[text() = 'Your cart']
-2022-03-29 19:27:03.746 [main] INFO  Pages.BasePage - Check element with xpath exists//div[@class='list-view-item__title']//a[1]
-2022-03-29 19:27:03.914 [AsyncHttpClient-1-4] WARN  org.asynchttpclient.netty.handler.WebSocketHandler - onError
+2022-03-29 19:59:32.654 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 99.0.4844.51 (resolved driver for Chrome 99)
+2022-03-29 19:59:32.737 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Professional\.cache\selenium\chromedriver\win32\99.0.4844.51\chromedriver.exe
+2022-03-29 19:59:38.815 [main] INFO  MainPageTest - I Love To Eat Fruits And Vegetables Add Ten Books To Cart Test
+2022-03-29 19:59:38.816 [main] INFO  Pages.BasePage - Clicking element with xpath//a[@aria-controls = 'SiteNavLabel-books-by-language']
+2022-03-29 19:59:38.995 [main] INFO  Pages.BasePage - Clicking element with xpath//a[text()='English Only']
+2022-03-29 19:59:40.661 [main] INFO  Pages.BasePage - Check element with xpath exists//h1[text()='English Only']
+2022-03-29 19:59:40.752 [main] INFO  Pages.BasePage - Clicking element with xpath//img[@alt='I-Love-to-Eat-Fruits-and-Vegetables-kids-bunnies-bedtime-story-Shelley-Admont-English-cover']
+2022-03-29 19:59:41.508 [main] INFO  Pages.BasePage - Check element with xpath exists//div[@class='product-single__meta']//h1[1]
+2022-03-29 19:59:41.724 [main] INFO  Pages.BasePage - Sending text to xpath//input[@name='quantity']
+2022-03-29 19:59:42.075 [main] INFO  Pages.BasePage - Check text added to xpath //input[@name='quantity']
+2022-03-29 19:59:42.267 [AsyncHttpClient-1-4] WARN  org.asynchttpclient.netty.handler.WebSocketHandler - onError
 java.net.SocketException: Connection reset
 	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
 	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426) ~[?:?]

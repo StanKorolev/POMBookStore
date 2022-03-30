@@ -37,8 +37,8 @@ public class CartTests extends UseCaseBase {
     }
 
 //Enter English books category - DONE in dropdown test class
-//Verify one book could be added to cart
-//Verify many books could be added to cart
+//Verify one book could be added to cart - DONE HERE
+//Verify many books could be added to cart -
 //Verify different languages books could be added to cart
 
     @Test
@@ -53,7 +53,7 @@ public class CartTests extends UseCaseBase {
         boolean isILoveToEatFruitsAndVegetablesVisible =  iLoveToEatFruitsAndVegetables.isILoveToEatFruitsAndVegetablesPageVisible();
         assertTrue(isILoveToEatFruitsAndVegetablesVisible);
 
-        iLoveToEatFruitsAndVegetables.ILoveToEatFruitsAndVegetablesAddToCart();
+        iLoveToEatFruitsAndVegetables.iLoveToEatFruitsAndVegetablesAddToCart();
         boolean isCartPageVisible =  cartPage.isCartPageTitleVisible();
         assertTrue(isCartPageVisible);
 
@@ -61,5 +61,22 @@ public class CartTests extends UseCaseBase {
         assertTrue(isILoveToEatFruitsAndVegetablesAddedToCart);
     }
 
+    @Test
+    public void ILoveToEatFruitsAndVegetablesAddToCartTenBooks() {
+        String booksQuantity = "10";
+        logger.info("I Love To Eat Fruits And Vegetables Add" + booksQuantity + "Books To Cart Test");
+
+        EnglishBooksPage englishBooksPage = bookByLang.openDropDownEnglishBooks();
+        boolean isEnglishBooksPageVisible = englishBooksPage.isEnglishBooksPageTitleVisible();
+        assertTrue(isEnglishBooksPageVisible);
+
+        englishBooksPage.openILoveToEatFruitsAndVegetables();
+        boolean isILoveToEatFruitsAndVegetablesVisible =  iLoveToEatFruitsAndVegetables.isILoveToEatFruitsAndVegetablesPageVisible();
+        assertTrue(isILoveToEatFruitsAndVegetablesVisible);
+
+        iLoveToEatFruitsAndVegetables.iLoveToEatFruitsAndVegetablesAddQuantity(booksQuantity);
+        boolean isiLoveToEatFruitsAndVegetablesQuantityAdded = iLoveToEatFruitsAndVegetables.isILoveToEatFruitsAndVegetablesQuantityAdded();
+        assertTrue(isiLoveToEatFruitsAndVegetablesQuantityAdded);
+    }
 
 }

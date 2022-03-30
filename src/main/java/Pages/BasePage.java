@@ -37,8 +37,20 @@ public class BasePage {
 
     protected void sendTextToElementByXpath(String xpath, String text) {
         logger.info("Sending text to xpath" + xpath);
+        findElementByXpath(xpath).clear();
         findElementByXpath(xpath).sendKeys(text);
     }
+
+    protected boolean checkTextAddedToXpath(String xpath, String value) {
+        try {
+            logger.info("Check text added to xpath " + xpath);
+            Assertions.assertEquals(value, webDriver.findElement(By.xpath(xpath)).getAttribute("value"));
+            return true;
+        } catch (Exception err) {
+            return false;
+        }
+    }
+
 
     protected boolean elementExists(String xpath) {
         try {
@@ -61,7 +73,7 @@ public class BasePage {
         return webDriver.getCurrentUrl();
     }
 
-    public void takeScreenshot(String name){
+    public void takeScreenshot(String name) {
         TakesScreenshot takesScreenshot = (TakesScreenshot) webDriver;
         File file = takesScreenshot.getScreenshotAs(OutputType.FILE);
         try {
@@ -72,7 +84,7 @@ public class BasePage {
 
     }
 
-    public File captureImageByXpath(String xpath){
+    public File captureImageByXpath(String xpath) {
         WebElement logo = webDriver.findElement(By.xpath(xpath));
         File file = logo.getScreenshotAs(OutputType.FILE);
         return file;
@@ -93,6 +105,7 @@ public class BasePage {
             return false;
         }
     }
+
     public void logsVerificationBase() {
         LogEntries entries = webDriver.manage().logs().get(LogType.BROWSER);
         List<LogEntry> logs = entries.getAll();
